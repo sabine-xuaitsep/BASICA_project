@@ -42,7 +42,7 @@ return [
     */
 
     'models' => [
-       // 'namespace' => 'App\\Models\\',
+       'namespace' => 'App\\Models\\',
     ],
 
     /*
@@ -144,7 +144,11 @@ return [
         ],
 
         'widgets' => [
-
+            App\VoyagerWidgets\WorkDimmer::class,
+            App\VoyagerWidgets\ClientDimmer::class,
+            App\VoyagerWidgets\TagDimmer::class,
+            App\VoyagerWidgets\PostDimmer::class,
+            App\VoyagerWidgets\CategoryDimmer::class,
         ],
 
     ],
@@ -181,7 +185,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#1ea8a4',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 
