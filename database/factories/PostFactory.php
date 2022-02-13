@@ -17,6 +17,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'content' => $this->faker->text(),
+            'image' => 'posts\\'.$this->faker->randomDigitNot(0).'.jpg',
             'created_at' => $this->faker->dateTime(),
             'category_id' => Category::inRandomOrder()->first(),
         ];

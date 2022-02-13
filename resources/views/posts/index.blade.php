@@ -20,106 +20,32 @@
   <div class="section">
     <div class="container">
       <div class="row">
-        <!-- Blog Post Excerpt -->
-        <div class="col-sm-6">
-          <div class="blog-post blog-single-post">
-            <div class="single-post-title">
-              <h2>Exerci Tation Ullamcorper</h2>
-            </div>
-
-            <div class="single-post-image">
-              <img src="{{ asset('assets/img/blog/2.jpg') }}" alt="Post Title">
-            </div>
-
-            <div class="single-post-info">
-              <i class="glyphicon glyphicon-time"></i>15 OCT, 2014 <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
-            </div>
-
-            <div class="single-post-content">
-              <p>
-                Vivamus euismod elit ac libero facilisis tristique. Duis mollis non ligula vel tincidunt. Nulla consectetur libero id nunc ornare, vel vulputate tellus mollis. Sed quis nulla magna. Integer rhoncus sem quis ultrices lobortis. Maecenas tempus nulla quis dolor vulputate egestas. Phasellus cursus tortor quis massa faucibus fermentum vel sit amet tortor. Phasellus vehicula lorem et tortor luctus, a dignissim lacus tempor. Aliquam volutpat molestie metus sit amet aliquam. Duis vestibulum quam tortor, sed ultrices orci sagittis nec.
-              </p>
-            <a href="blog-post.html" class="btn">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- End Blog Post Excerpt -->
-
-
-        <!-- Blog Post Excerpt -->
-        <div class="col-sm-6">
-          <div class="blog-post blog-single-post">
-            <div class="single-post-title">
-              <h2>Exerci Tation Ullamcorper</h2>
-            </div>
-
-            <div class="single-post-image">
-              <img src="{{ asset('assets/img/blog/1.jpg') }}" alt="Post Title">
-            </div>
-
-            <div class="single-post-info">
-              <i class="glyphicon glyphicon-time"></i>15 OCT, 2014 <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
-            </div>
-
-            <div class="single-post-content">
-              <p>
-                Vivamus euismod elit ac libero facilisis tristique. Duis mollis non ligula vel tincidunt. Nulla consectetur libero id nunc ornare, vel vulputate tellus mollis. Sed quis nulla magna. Integer rhoncus sem quis ultrices lobortis. Maecenas tempus nulla quis dolor vulputate egestas. Phasellus cursus tortor quis massa faucibus fermentum vel sit amet tortor. Phasellus vehicula lorem et tortor luctus, a dignissim lacus tempor. Aliquam volutpat molestie metus sit amet aliquam. Duis vestibulum quam tortor, sed ultrices orci sagittis nec.
-              </p>
-              <a href="blog-post.html" class="btn">Read more</a>
+        
+        @foreach ($posts as $post)
+          <!-- Blog Post Excerpt -->
+          <div class="col-sm-6">
+            <div class="blog-post blog-single-post">
+              <div class="single-post-title">
+                <h2>{{ $post->title }}</h2>
+              </div>
+  
+              <div class="single-post-image">
+                <img src="{{ Voyager::image($post->image) }}" alt="Post Title">
+              </div>
+  
+              <div class="single-post-info">
+                <i class="glyphicon glyphicon-time"></i>{{ Str::upper($post->created_at->format('d M, Y')) }} 
+                <a href="#" title="Show Comments"><i class="glyphicon glyphicon-bookmark"></i>{{ $post->category->name }}</a>
+              </div>
+  
+              <div class="single-post-content">
+                <p>{!! Str::limit($post->content, 100, ' [...]') !!}</p>
+                <a href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}" class="btn">Read more</a>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- End Blog Post Excerpt -->
-
-        <!-- Blog Post Excerpt -->
-        <div class="col-sm-6">
-          <div class="blog-post blog-single-post">
-            <div class="single-post-title">
-              <h2>Exerci Tation Ullamcorper</h2>
-            </div>
-
-            <div class="single-post-image">
-              <img src="{{ asset('assets/img/blog/3.jpg') }}" alt="Post Title">
-            </div>
-
-            <div class="single-post-info">
-              <i class="glyphicon glyphicon-time"></i>15 OCT, 2014 <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
-            </div>
-
-            <div class="single-post-content">
-              <p>
-                Vivamus euismod elit ac libero facilisis tristique. Duis mollis non ligula vel tincidunt. Nulla consectetur libero id nunc ornare, vel vulputate tellus mollis. Sed quis nulla magna. Integer rhoncus sem quis ultrices lobortis. Maecenas tempus nulla quis dolor vulputate egestas. Phasellus cursus tortor quis massa faucibus fermentum vel sit amet tortor. Phasellus vehicula lorem et tortor luctus, a dignissim lacus tempor. Aliquam volutpat molestie metus sit amet aliquam. Duis vestibulum quam tortor, sed ultrices orci sagittis nec.
-              </p>
-              <a href="blog-post.html" class="btn">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- End Blog Post Excerpt -->
-
-        <!-- Blog Post Excerpt -->
-        <div class="col-sm-6">
-          <div class="blog-post blog-single-post">
-            <div class="single-post-title">
-              <h2>Exerci Tation Ullamcorper</h2>
-            </div>
-
-            <div class="single-post-image">
-              <img src="{{ asset('assets/img/blog/4.jpg') }}" alt="Post Title">
-            </div>
-
-            <div class="single-post-info">
-              <i class="glyphicon glyphicon-time"></i>15 OCT, 2014 <a href="#" title="Show Comments"><i class="glyphicon glyphicon-comment"></i>11</a>
-            </div>
-
-            <div class="single-post-content">
-              <p>
-                Vivamus euismod elit ac libero facilisis tristique. Duis mollis non ligula vel tincidunt. Nulla consectetur libero id nunc ornare, vel vulputate tellus mollis. Sed quis nulla magna. Integer rhoncus sem quis ultrices lobortis. Maecenas tempus nulla quis dolor vulputate egestas. Phasellus cursus tortor quis massa faucibus fermentum vel sit amet tortor. Phasellus vehicula lorem et tortor luctus, a dignissim lacus tempor. Aliquam volutpat molestie metus sit amet aliquam. Duis vestibulum quam tortor, sed ultrices orci sagittis nec.
-              </p>
-              <a href="blog-post.html" class="btn">Read more</a>
-            </div>
-          </div>
-        </div>
-        <!-- End Blog Post Excerpt -->
+          <!-- End Blog Post Excerpt -->
+        @endforeach
 
         <!-- Pagination -->
         <div class="pagination-wrapper ">

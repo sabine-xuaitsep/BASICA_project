@@ -17,18 +17,18 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
-Route::get('/posts', function () {
-    return view('posts.index');
-})->name('posts.index');
+Route::get('/contact', function () {
+    return view('template.partials._contact');
+})->name('contact');
 
 Route::get('/works', function () {
     return view('works.index');
 })->name('works.index');
 
-Route::get('/contact', function () {
-    return view('template.partials._contact');
-})->name('contact');
 
+Route::prefix('/posts')->name('posts.')->group(function () {
+    require __DIR__ . '/posts.php';
+});
 
 Route::group(['prefix' => 'admin-panel'], function () {
     Voyager::routes();
