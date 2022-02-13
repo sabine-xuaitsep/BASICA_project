@@ -7,7 +7,9 @@ $ctrl = '\App\Http\Controllers\WorksController';
 
 // PATTERN: works
 // ALIAS: works.index
-Route::get('', $ctrl . '@index')->name('index');
+Route::get('', function () {
+  return view('works.index');
+})->name('index');
 
 
 // PATTERN: works/{work}/{slug}
