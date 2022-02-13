@@ -23,7 +23,7 @@
         <!-- Product Image & Available Colors -->
         <div class="col-sm-6">
           <div class="product-image-large">
-            <img src="{{ asset('assets/img/portfolio/6.jpg') }}" alt="Item Name">
+            <img src="{{ Voyager::image($work->image) }}" alt="Item Name">
           </div>
           <div class="colors">
             <span class="color-white"></span>
@@ -36,18 +36,18 @@
           <!-- End Product Image & Available Colors -->
           <!-- Product Summary & Options -->
         <div class="col-sm-6 product-details">
-          <h2>LOREM IPSUM DOLOR</h2>
+          <h2>{{ $work->title }}</h2>
           <h3>Quick Overview</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim ornare nisi, vitae mattis nulla ante id dui.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus.
-          </p>
+          <p>{!! $work->content !!}</p>
           <h3>Project Details</h3>
-          <p><strong>Client: </strong>Vactual Art</p>
-          <p><strong>Date: </strong>August 21, 2015</p>
-          <p><strong>Tags: </strong>Photography, Art, Graphics</p>
+          <p><strong>Client: </strong>{{ $work->client->name }}</p>
+          <p><strong>Date: </strong>{{ $work->created_at->format('F d, Y') }}</p>
+          <p>
+            <strong>Tags: </strong>
+            @foreach ($work->tags as $tag)
+              {{ Str::ucfirst($tag->name) }}@if (!$loop->last),@endif
+            @endforeach
+          </p>
         </div>
           <!-- End Product Summary & Options -->
       </div>
