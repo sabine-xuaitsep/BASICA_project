@@ -24,6 +24,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      View::composer('works._recents', '\App\View\Composers\WorkComposer@_recents');
+      View::composer('works._list', '\App\View\Composers\WorkComposer@_list');
     }
 }

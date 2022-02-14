@@ -35,12 +35,14 @@
   <div class="section">
     <div class="container">
       <div class="row">
+        <ul class="grid cs-style-3" id="worksList">
 
-        @include('works._recents')
+          @include('works._list')
         
+        </ul>
       </div>
       <ul class="pager">
-        <li><a href="#">More works</a></li>
+        <li><a href="{{ route('ajax.works.index') }}" id="olderWorks">More works</a></li>
       </ul>
     </div>
   </div>
@@ -54,4 +56,6 @@
       $(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
     });
   </script>
+
+  <script src="{{ asset('assets/js/works/index.js') }}"></script>
 @endsection

@@ -43,8 +43,9 @@ class WorkComposer
      * @param  \Illuminate\View\View  $view
      * @return void
      */
-    public function _recents(View $view)
+    public function _list(View $view)
     {
-        $view->with('works', $this->works->orderBy('created_at', 'desc')->take(6)->get());
+        $offset = $view->getData()["offset"] ?? 0;
+        $view->with('works', $this->works->orderBy('created_at', 'desc')->offset($offset)->take(6)->get());
     }
 }
