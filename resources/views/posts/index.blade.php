@@ -39,7 +39,7 @@
               </div>
   
               <div class="single-post-content">
-                <p>{!! Str::limit($post->content, 100, ' [...]') !!}</p>
+                <p>{!! Str::words($post->content, 20, ' [...]') !!}</p>
                 <a href="{{ route('posts.show', ['post' => $post->id, 'slug' => Str::slug($post->title, '-')]) }}" class="btn">Read more</a>
               </div>
             </div>
