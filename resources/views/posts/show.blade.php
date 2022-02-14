@@ -19,6 +19,7 @@
   <div class="section">
     <div class="container">
       <div class="row">
+
         <!-- Blog Post -->
         <div class="col-sm-8">
           <div class="blog-post blog-single-post">
@@ -27,7 +28,7 @@
             </div>
 
             <div class="single-post-image">
-              <img src="{{ asset('assets/img/blog/1.jpg') }}" alt="Post Title">
+              <img src="{{ Voyager::image($post->image) }}" alt="Post Title">
             </div>
             <div class="single-post-info">
               <i class="glyphicon glyphicon-time"></i>{{ Str::upper($post->created_at->format('d M, Y')) }} 
@@ -40,23 +41,13 @@
           </div>
         </div>
         <!-- End Blog Post -->
+
         <!-- Sidebar -->
         <div class="col-sm-4 blog-sidebar">
 
-          <h4>Recent Posts</h4>
-          <ul class="recent-posts">
-            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="#">Sed sit amet metus sit</a></li>
-            <li><a href="#">Nunc et diam volutpat tellus ultrices</a></li>
-            <li><a href="#">Quisque sollicitudin cursus felis</a></li>
-          </ul>
-          <h4>Categories</h4>
-          <ul class="blog-categories">
-            <li><a href="#">Lorem ipsum</a></li>
-            <li><a href="#">Sed sit amet metus</a></li>
-            <li><a href="#">Nunc et diam </a></li>
-            <li><a href="#">Quisque</a></li>
-          </ul>
+          @include('posts._recents')
+
+          @include('categories._index')
           
         </div>
         <!-- End Sidebar -->

@@ -6,7 +6,7 @@
 
 @section('content')
 
-  @include('works._slider', ['works' => \App\Models\Work::orderBy('created_at', 'desc')->take(3)->get()])
+  @include('works._slider')
 
   <!-- Our Portfolio -->
 
@@ -34,7 +34,7 @@
     <div class="container">
       <div class="row">
 
-        @include('posts._latest', ['posts' => \App\Models\Post::orderBy('created_at', 'desc')->take(3)->get()])
+        @include('posts._latest')
 
         @include('home._tweets')
 

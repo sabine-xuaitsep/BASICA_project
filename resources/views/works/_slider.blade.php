@@ -7,10 +7,10 @@
     </ol>
     <div class="carousel-inner">
 
-      @foreach ($works as $work)
+      @foreach (\App\Models\Work::orderBy('created_at', 'desc')->take(3)->get() as $work)
       
         <div 
-          class="item @if ($loop->first) active @endif" 
+          @class(['item', 'active' => $loop->first])
           style="background-image: url({{ Voyager::image($work->image) }})"
           >
           <div class="container">
@@ -32,8 +32,6 @@
         </div><!--/.item-->
 
       @endforeach
-      {{-- <div class="item active">
-      </div><!--/.item--> --}}
 
     </div><!--/.carousel-inner-->
   </div><!--/.carousel-->

@@ -2,7 +2,7 @@
 <div class="col-sm-6 featured-news">
   <h2>Latest Blog Posts</h2>
 
-  @foreach ($posts as $post)
+  @foreach (\App\Models\Post::orderBy('created_at', 'desc')->take(3)->get() as $post)
 
     <div class="row">
       <div class="col-xs-4">
