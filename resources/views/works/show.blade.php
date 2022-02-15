@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('title')
-    Portofolio -
+  Portofolio - {{ $work->title }}
 @endsection
 
 @section('content')
@@ -56,59 +56,6 @@
 
   <hr>
 
-  <div class="section">
-    <div class="container">
-      <div class="row">
-
-        <div class="section-title">
-          <h1>Similar Works</h1>
-        </div>
-
-        <ul class="grid cs-style-3">
-          <div class="col-md-3 col-sm-6">
-            <figure>
-              <img src="{{ asset('assets/img/portfolio/4.jpg') }}" alt="img04">
-              <figcaption>
-                <h3>Settings</h3>
-                <span>Jacob Cummings</span>
-                <a href="portfolio-item.html">Take a look</a>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <figure>
-              <img src="{{ asset('assets/img/portfolio/1.jpg') }}" alt="img01">
-              <figcaption>
-                <h3>Camera</h3>
-                <span>Jacob Cummings</span>
-                <a href="portfolio-item.html">Take a look</a>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <figure>
-              <img src="{{ asset('assets/img/portfolio/2.jpg') }}" alt="img02">
-              <figcaption>
-                <h3>Music</h3>
-                <span>Jacob Cummings</span>
-                <a href="portfolio-item.html">Take a look</a>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <figure>
-              <img src="{{ asset('assets/img/portfolio/5.jpg') }}" alt="img05">
-              <figcaption>
-                <h3>Safari</h3>
-                <span>Jacob Cummings</span>
-                <a href="portfolio-item.html">Take a look</a>
-              </figcaption>
-            </figure>
-          </div>
-        </ul>
-
-      </div>
-    </div>
-  </div>
+  @include('works._similars', compact('work'))
 
 @endsection
