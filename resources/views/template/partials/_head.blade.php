@@ -4,10 +4,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<link rel="icon" href="{{ asset('favicon.ico') }}" />
+
 <title>@yield('title') - BASICA!</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+
+<!-- HectorDenize homeMade Core CSS -->
+<link href="{{ asset('assets/css/hectordenize.css') }}" rel="stylesheet">
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">

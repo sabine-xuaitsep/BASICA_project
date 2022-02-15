@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('title')
-    Blog
+  Blog
 @endsection
 
 @section('content')
@@ -19,11 +19,12 @@
 
   <div class="section">
     <div class="container">
-      <div class="row">
+
+      <div class="gridHD gapX-3">
         
         @foreach ($posts as $post)
           <!-- Blog Post Excerpt -->
-          <div class="col-sm-6">
+          <div class="column-m-6">
             <div class="blog-post blog-single-post">
               <div class="single-post-title">
                 <h2>{{ $post->title }}</h2>
@@ -47,18 +48,7 @@
           <!-- End Blog Post Excerpt -->
         @endforeach
 
-        <!-- Pagination -->
-        <div class="pagination-wrapper ">
-          <ul class="pagination pagination-sm">
-            <li class="disabled"><a href="#">Previous</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-        </div>
+        @include('posts._pagination')
 
       </div>
     </div>

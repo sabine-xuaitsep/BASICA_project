@@ -15,6 +15,15 @@ class PostsController extends Controller
     }
 
 
+    public function more(int $offset) {
+        $posts = Post::orderBy('created_at', 'desc')
+                        ->offset(($offset-1)*4)
+                        ->take(4)
+                        ->get();
+        return view('posts.index', compact('posts'));
+    }
+
+
     public function show(Post $post) {
         return view('posts.show', compact('post'));
     }

@@ -1,0 +1,18 @@
+.gridHD {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0;
+  padding: 0 !important;
+}
+.gridHD > * {
+  grid-column: span 12;
+  grid-row: span 1;
+}
+.gridHD.gapX-3 {
+  column-gap: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .column-m-6 {
+    grid-column: span 6;
+  }
+}
