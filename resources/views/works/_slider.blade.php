@@ -7,7 +7,7 @@
     </ol>
     <div class="carousel-inner">
 
-      @foreach (\App\Models\Work::orderBy('created_at', 'desc')->take(3)->get() as $work)
+      @foreach (\App\Models\Work::where('inSlider', '=', '1')->orderBy('created_at', 'desc')->take(3)->get() as $work)
       
         <div 
           @class(['item', 'active' => $loop->first])

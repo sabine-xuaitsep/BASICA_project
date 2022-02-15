@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('title')
-    Portofolio
+  Portofolio
 @endsection
 
 @section('content')

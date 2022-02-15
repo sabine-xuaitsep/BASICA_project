@@ -1,7 +1,7 @@
 @extends('template.index')
 
 @section('title')
-    Blog - {{ $post->title }}
+  Blog - {{ $post->title }}
 @endsection
 
 @section('content')
