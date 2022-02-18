@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WorksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +28,9 @@ Route::get('/contact', function () {
 
 // PATTERN: ajax/works/{offset?}
 // ALIAS: ajax.works.index
-Route::middleware(['ajax'])->get('/ajax/works/{offset?}', [WorksController::class, 'ajaxIndex'])->name('ajax.works.index');
+Route::middleware(['ajax'])->prefix('/ajax')->name('ajax.')->group(function () {
+    require __DIR__ . '/ajax.php';
+});
 
 
 // PATTERN: /posts/... [GROUP]
